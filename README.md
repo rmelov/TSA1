@@ -1,7 +1,7 @@
 pré-requisitos:
-  docker instalado e rodando
+	docker instalado e rodando
 
-como executar
+como executar:
   abra o terminal na pasta do projeto e execute:
     docker-compose up --build
 
@@ -9,7 +9,7 @@ espere o terminal estabilizar,
 o sql server pode levar cerca de 1 a 2 minutos para iniciar completamente na primeira vez
 
 criar o banco de dados:
-  com o docker rodando, abra um novo terminal e execute o comando abaixo para criar a base TS06A1:
+  com o docker rodando, abra um novo terminal e execute o comando para criar a base TS06A1:
     docker exec -it mssql_db /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "TSA1!2026z" -C -Q "CREATE DATABASE TS06A1"
 
 acesso:
