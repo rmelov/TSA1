@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  db-sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: mssql_db
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=TSA1!2026z
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+
+  api-backend:
+    build: .
+    container_name: spring_app
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:sqlserver://db-sqlserver:1433;databaseName=TS06A1;encrypt=true;trustServerCertificate=true
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=TSA1!2026z
+    depends_on:
+      - db-sqlserver
