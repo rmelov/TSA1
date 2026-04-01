@@ -1,16 +1,12 @@
 pré-requisitos:
-<<<<<<< HEAD
   docker instalado e em execução
   jdk21 instalado, se desejar executar via ./mvnw
-=======
-	docker instalado e rodando
->>>>>>> feb4cb911cc56fbc708a54e3ee062bc1be95fd16
 
 como executar:
   abra o terminal na pasta do projeto e execute:
     docker compose up --build
   ou, caso falhe:
-    docker-compose up --build
+    docker(-)compose up --build
 
 espere o terminal estabilizar,
 o sql server pode levar cerca de 1 a 2 minutos para iniciar completamente na primeira vez
@@ -19,11 +15,7 @@ verificar o docker:
   docker ps
 
 criar o banco de dados:
-<<<<<<< HEAD
   com o docker em execução, abra um novo terminal e execute o comando abaixo para criar a base TS06A1:
-=======
-  com o docker rodando, abra um novo terminal e execute o comando para criar a base TS06A1:
->>>>>>> feb4cb911cc56fbc708a54e3ee062bc1be95fd16
     docker exec -it mssql_db /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "TSA1!2026z" -C -Q "CREATE DATABASE TS06A1"
 
 o container mssql_db deve estar rodando e o banco TS06A1 já deve ter sido criado
